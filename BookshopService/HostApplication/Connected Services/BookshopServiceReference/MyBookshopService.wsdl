@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="MyBookshopService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:59431/MyBookshopService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:59431/MyBookshopService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/BookshopDatabase" />
+      <xsd:import schemaLocation="http://localhost:59431/MyBookshopService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:59431/MyBookshopService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/BookshopService" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IMyBookshopService_Login_InputMessage">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_Login_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_Login_UnsuccessfullLoginFaultFault_FaultMessage">
+    <wsdl:part xmlns:q1="http://schemas.datacontract.org/2004/07/BookshopDatabase" name="detail" element="q1:UnsuccessfullLoginFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_Logout_InputMessage">
+    <wsdl:part name="parameters" element="tns:Logout" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_Logout_OutputMessage">
+    <wsdl:part name="parameters" element="tns:LogoutResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_ListAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListAll" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_ListAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_ListByIsbn_InputMessage">
+    <wsdl:part name="parameters" element="tns:ListByIsbn" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_ListByIsbn_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ListByIsbnResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_ListByIsbn_ArgumentFaultFault_FaultMessage">
+    <wsdl:part xmlns:q2="http://schemas.datacontract.org/2004/07/BookshopDatabase" name="detail" element="q2:ArgumentFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_ListByIsbn_ArgumentNullFaultFault_FaultMessage">
+    <wsdl:part xmlns:q3="http://schemas.datacontract.org/2004/07/BookshopDatabase" name="detail" element="q3:ArgumentNullFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_ListByIsbn_IndexOutOfRangeFaultFault_FaultMessage">
+    <wsdl:part xmlns:q4="http://schemas.datacontract.org/2004/07/BookshopDatabase" name="detail" element="q4:IndexOutOfRangeFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_Insert_InputMessage">
+    <wsdl:part name="parameters" element="tns:Insert" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_Insert_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_Insert_ArgumentFaultFault_FaultMessage">
+    <wsdl:part xmlns:q5="http://schemas.datacontract.org/2004/07/BookshopDatabase" name="detail" element="q5:ArgumentFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_Update_InputMessage">
+    <wsdl:part name="parameters" element="tns:Update" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_Update_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_Update_ArgumentFaultFault_FaultMessage">
+    <wsdl:part xmlns:q6="http://schemas.datacontract.org/2004/07/BookshopDatabase" name="detail" element="q6:ArgumentFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_Update_ArgumentNullFaultFault_FaultMessage">
+    <wsdl:part xmlns:q7="http://schemas.datacontract.org/2004/07/BookshopDatabase" name="detail" element="q7:ArgumentNullFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_Update_IndexOutOfRangeFaultFault_FaultMessage">
+    <wsdl:part xmlns:q8="http://schemas.datacontract.org/2004/07/BookshopDatabase" name="detail" element="q8:IndexOutOfRangeFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_Delete_InputMessage">
+    <wsdl:part name="parameters" element="tns:Delete" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_Delete_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_Delete_ArgumentFaultFault_FaultMessage">
+    <wsdl:part xmlns:q9="http://schemas.datacontract.org/2004/07/BookshopDatabase" name="detail" element="q9:ArgumentFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_Delete_ArgumentNullFaultFault_FaultMessage">
+    <wsdl:part xmlns:q10="http://schemas.datacontract.org/2004/07/BookshopDatabase" name="detail" element="q10:ArgumentNullFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_Delete_IndexOutOfRangeFaultFault_FaultMessage">
+    <wsdl:part xmlns:q11="http://schemas.datacontract.org/2004/07/BookshopDatabase" name="detail" element="q11:IndexOutOfRangeFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_DiscountAll_InputMessage">
+    <wsdl:part name="parameters" element="tns:DiscountAll" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_DiscountAll_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DiscountAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_DiscountAll_ArgumentFaultFault_FaultMessage">
+    <wsdl:part xmlns:q12="http://schemas.datacontract.org/2004/07/BookshopDatabase" name="detail" element="q12:ArgumentFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_DiscountAll_IndexOutOfRangeFaultFault_FaultMessage">
+    <wsdl:part xmlns:q13="http://schemas.datacontract.org/2004/07/BookshopDatabase" name="detail" element="q13:IndexOutOfRangeFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_DiscountOne_InputMessage">
+    <wsdl:part name="parameters" element="tns:DiscountOne" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_DiscountOne_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DiscountOneResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_DiscountOne_ArgumentFaultFault_FaultMessage">
+    <wsdl:part xmlns:q14="http://schemas.datacontract.org/2004/07/BookshopDatabase" name="detail" element="q14:ArgumentFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_DiscountOne_ArgumentNullFaultFault_FaultMessage">
+    <wsdl:part xmlns:q15="http://schemas.datacontract.org/2004/07/BookshopDatabase" name="detail" element="q15:ArgumentNullFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_DiscountOne_IndexOutOfRangeFaultFault_FaultMessage">
+    <wsdl:part xmlns:q16="http://schemas.datacontract.org/2004/07/BookshopDatabase" name="detail" element="q16:IndexOutOfRangeFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_DiscountByAuthor_InputMessage">
+    <wsdl:part name="parameters" element="tns:DiscountByAuthor" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_DiscountByAuthor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DiscountByAuthorResponse" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_DiscountByAuthor_ArgumentFaultFault_FaultMessage">
+    <wsdl:part xmlns:q17="http://schemas.datacontract.org/2004/07/BookshopDatabase" name="detail" element="q17:ArgumentFault" />
+  </wsdl:message>
+  <wsdl:message name="IMyBookshopService_DiscountByAuthor_ArgumentNullFaultFault_FaultMessage">
+    <wsdl:part xmlns:q18="http://schemas.datacontract.org/2004/07/BookshopDatabase" name="detail" element="q18:ArgumentNullFault" />
+  </wsdl:message>
+  <wsdl:portType name="IMyBookshopService">
+    <wsdl:operation name="Login">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyBookshopService/Login" message="tns:IMyBookshopService_Login_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyBookshopService/LoginResponse" message="tns:IMyBookshopService_Login_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyBookshopService/LoginUnsuccessfullLoginFaultFault" name="UnsuccessfullLoginFaultFault" message="tns:IMyBookshopService_Login_UnsuccessfullLoginFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyBookshopService/Logout" message="tns:IMyBookshopService_Logout_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyBookshopService/LogoutResponse" message="tns:IMyBookshopService_Logout_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyBookshopService/ListAll" message="tns:IMyBookshopService_ListAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyBookshopService/ListAllResponse" message="tns:IMyBookshopService_ListAll_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ListByIsbn">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyBookshopService/ListByIsbn" message="tns:IMyBookshopService_ListByIsbn_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyBookshopService/ListByIsbnResponse" message="tns:IMyBookshopService_ListByIsbn_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyBookshopService/ListByIsbnArgumentFaultFault" name="ArgumentFaultFault" message="tns:IMyBookshopService_ListByIsbn_ArgumentFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyBookshopService/ListByIsbnArgumentNullFaultFault" name="ArgumentNullFaultFault" message="tns:IMyBookshopService_ListByIsbn_ArgumentNullFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyBookshopService/ListByIsbnIndexOutOfRangeFaultFault" name="IndexOutOfRangeFaultFault" message="tns:IMyBookshopService_ListByIsbn_IndexOutOfRangeFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyBookshopService/Insert" message="tns:IMyBookshopService_Insert_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyBookshopService/InsertResponse" message="tns:IMyBookshopService_Insert_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyBookshopService/InsertArgumentFaultFault" name="ArgumentFaultFault" message="tns:IMyBookshopService_Insert_ArgumentFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyBookshopService/Update" message="tns:IMyBookshopService_Update_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyBookshopService/UpdateResponse" message="tns:IMyBookshopService_Update_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyBookshopService/UpdateArgumentFaultFault" name="ArgumentFaultFault" message="tns:IMyBookshopService_Update_ArgumentFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyBookshopService/UpdateArgumentNullFaultFault" name="ArgumentNullFaultFault" message="tns:IMyBookshopService_Update_ArgumentNullFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyBookshopService/UpdateIndexOutOfRangeFaultFault" name="IndexOutOfRangeFaultFault" message="tns:IMyBookshopService_Update_IndexOutOfRangeFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyBookshopService/Delete" message="tns:IMyBookshopService_Delete_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyBookshopService/DeleteResponse" message="tns:IMyBookshopService_Delete_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyBookshopService/DeleteArgumentFaultFault" name="ArgumentFaultFault" message="tns:IMyBookshopService_Delete_ArgumentFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyBookshopService/DeleteArgumentNullFaultFault" name="ArgumentNullFaultFault" message="tns:IMyBookshopService_Delete_ArgumentNullFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyBookshopService/DeleteIndexOutOfRangeFaultFault" name="IndexOutOfRangeFaultFault" message="tns:IMyBookshopService_Delete_IndexOutOfRangeFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DiscountAll">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyBookshopService/DiscountAll" message="tns:IMyBookshopService_DiscountAll_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyBookshopService/DiscountAllResponse" message="tns:IMyBookshopService_DiscountAll_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyBookshopService/DiscountAllArgumentFaultFault" name="ArgumentFaultFault" message="tns:IMyBookshopService_DiscountAll_ArgumentFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyBookshopService/DiscountAllIndexOutOfRangeFaultFault" name="IndexOutOfRangeFaultFault" message="tns:IMyBookshopService_DiscountAll_IndexOutOfRangeFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DiscountOne">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyBookshopService/DiscountOne" message="tns:IMyBookshopService_DiscountOne_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyBookshopService/DiscountOneResponse" message="tns:IMyBookshopService_DiscountOne_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyBookshopService/DiscountOneArgumentFaultFault" name="ArgumentFaultFault" message="tns:IMyBookshopService_DiscountOne_ArgumentFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyBookshopService/DiscountOneArgumentNullFaultFault" name="ArgumentNullFaultFault" message="tns:IMyBookshopService_DiscountOne_ArgumentNullFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyBookshopService/DiscountOneIndexOutOfRangeFaultFault" name="IndexOutOfRangeFaultFault" message="tns:IMyBookshopService_DiscountOne_IndexOutOfRangeFaultFault_FaultMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DiscountByAuthor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IMyBookshopService/DiscountByAuthor" message="tns:IMyBookshopService_DiscountByAuthor_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IMyBookshopService/DiscountByAuthorResponse" message="tns:IMyBookshopService_DiscountByAuthor_OutputMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyBookshopService/DiscountByAuthorArgumentFaultFault" name="ArgumentFaultFault" message="tns:IMyBookshopService_DiscountByAuthor_ArgumentFaultFault_FaultMessage" />
+      <wsdl:fault wsaw:Action="http://tempuri.org/IMyBookshopService/DiscountByAuthorArgumentNullFaultFault" name="ArgumentNullFaultFault" message="tns:IMyBookshopService_DiscountByAuthor_ArgumentNullFaultFault_FaultMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IMyBookshopService" type="tns:IMyBookshopService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/IMyBookshopService/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="UnsuccessfullLoginFaultFault">
+        <soap:fault use="literal" name="UnsuccessfullLoginFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Logout">
+      <soap:operation soapAction="http://tempuri.org/IMyBookshopService/Logout" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListAll">
+      <soap:operation soapAction="http://tempuri.org/IMyBookshopService/ListAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ListByIsbn">
+      <soap:operation soapAction="http://tempuri.org/IMyBookshopService/ListByIsbn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ArgumentFaultFault">
+        <soap:fault use="literal" name="ArgumentFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArgumentNullFaultFault">
+        <soap:fault use="literal" name="ArgumentNullFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="IndexOutOfRangeFaultFault">
+        <soap:fault use="literal" name="IndexOutOfRangeFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Insert">
+      <soap:operation soapAction="http://tempuri.org/IMyBookshopService/Insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ArgumentFaultFault">
+        <soap:fault use="literal" name="ArgumentFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Update">
+      <soap:operation soapAction="http://tempuri.org/IMyBookshopService/Update" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ArgumentFaultFault">
+        <soap:fault use="literal" name="ArgumentFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArgumentNullFaultFault">
+        <soap:fault use="literal" name="ArgumentNullFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="IndexOutOfRangeFaultFault">
+        <soap:fault use="literal" name="IndexOutOfRangeFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="Delete">
+      <soap:operation soapAction="http://tempuri.org/IMyBookshopService/Delete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ArgumentFaultFault">
+        <soap:fault use="literal" name="ArgumentFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArgumentNullFaultFault">
+        <soap:fault use="literal" name="ArgumentNullFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="IndexOutOfRangeFaultFault">
+        <soap:fault use="literal" name="IndexOutOfRangeFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DiscountAll">
+      <soap:operation soapAction="http://tempuri.org/IMyBookshopService/DiscountAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ArgumentFaultFault">
+        <soap:fault use="literal" name="ArgumentFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="IndexOutOfRangeFaultFault">
+        <soap:fault use="literal" name="IndexOutOfRangeFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DiscountOne">
+      <soap:operation soapAction="http://tempuri.org/IMyBookshopService/DiscountOne" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ArgumentFaultFault">
+        <soap:fault use="literal" name="ArgumentFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArgumentNullFaultFault">
+        <soap:fault use="literal" name="ArgumentNullFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="IndexOutOfRangeFaultFault">
+        <soap:fault use="literal" name="IndexOutOfRangeFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="DiscountByAuthor">
+      <soap:operation soapAction="http://tempuri.org/IMyBookshopService/DiscountByAuthor" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="ArgumentFaultFault">
+        <soap:fault use="literal" name="ArgumentFaultFault" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ArgumentNullFaultFault">
+        <soap:fault use="literal" name="ArgumentNullFaultFault" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="MyBookshopService">
+    <wsdl:port name="BasicHttpBinding_IMyBookshopService" binding="tns:BasicHttpBinding_IMyBookshopService">
+      <soap:address location="http://localhost:59431/MyBookshopService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="52d1e667-0d81-4b78-a6f1-369b64b3c44d" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:59431/MyBookshopService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MyBookshopService.xsd" MetadataType="Schema" ID="2f375e8c-e046-4051-b70c-7724b557670c" SourceId="1" SourceUrl="http://localhost:59431/MyBookshopService.svc?xsd=xsd2" />
+    <MetadataFile FileName="MyBookshopService.disco" MetadataType="Disco" ID="98c606c5-4740-4591-b662-a6dccc74ee7a" SourceId="1" SourceUrl="http://localhost:59431/MyBookshopService.svc?disco" />
+    <MetadataFile FileName="MyBookshopService.wsdl" MetadataType="Wsdl" ID="35dbcd6e-373c-47e1-872f-d882820bb481" SourceId="1" SourceUrl="http://localhost:59431/MyBookshopService.svc?wsdl" />
+    <MetadataFile FileName="MyBookshopService1.xsd" MetadataType="Schema" ID="2b9be181-d355-4810-a591-38065587f82c" SourceId="1" SourceUrl="http://localhost:59431/MyBookshopService.svc?xsd=xsd1" />
+    <MetadataFile FileName="MyBookshopService2.xsd" MetadataType="Schema" ID="915bf509-7348-4aa2-aef3-833223b89ca4" SourceId="1" SourceUrl="http://localhost:59431/MyBookshopService.svc?xsd=xsd0" />
+    <MetadataFile FileName="MyBookshopService3.xsd" MetadataType="Schema" ID="a11dd4e1-a2ef-43fa-8eba-bf3583225bde" SourceId="1" SourceUrl="http://localhost:59431/MyBookshopService.svc?xsd=xsd3" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
